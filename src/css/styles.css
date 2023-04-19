@@ -6,6 +6,13 @@
     padding: 0;
 }
 
+.whosturn {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: rgb(107, 107, 107);
+    font-style: italic;
+}
 .board {
     position: absolute;
     height: 100vh;
@@ -28,7 +35,7 @@
     border: 1px solid black;
     position: relative;
     cursor: pointer;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,6 +123,7 @@
     width: 20%;
     transform: rotate(45deg);
 }
+
 .board.o .box:not(.x):not(.o)::after {
     content: '';
     position: absolute;
@@ -135,12 +143,11 @@
 
 .board.x .box:not(.x):not(.o):hover::after,
 .board.x .box:not(.x):not(.o):hover::before,
-.board.o .box:not(.x):not(.o):hover::before
-{
+.board.o .box:not(.x):not(.o):hover::before {
     background-color: lightgrey;
 }
 
-.game-over-popup{
+.game-over-popup {
     display: none;
     background-color: rgba(0, 0, 0, 0.9);
     position: absolute;
@@ -150,21 +157,25 @@
     align-items: center;
     justify-content: center;
 }
-.show{
+
+.show {
     display: flex;
 }
 
-.popup-message{
+.popup-message {
     color: white;
     font-size: 2.1rem;
     padding: 0.3rem;
 }
-.game-over-popup .reset-btn{
+
+.game-over-popup .reset-btn {
     font-size: 1.4rem;
     padding: 0.3rem 0.8rem;
     background-color: white;
     border: 1px solid black;
 }
-.game-over-popup .reset-btn:hover{
+
+.game-over-popup .reset-btn:hover {
     background-color: rgb(189, 189, 189);
 }
+

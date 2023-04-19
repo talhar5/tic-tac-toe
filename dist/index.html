@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,29 @@
     
     
     <title>Tic Tac Toe</title>
-  <script type="module" crossorigin src="./assets/index-8efd5b10.js"></script>
-  <link rel="stylesheet" href="./assets/index-1fd21280.css">
+  <script type="module" crossorigin src="./assets/index-bcfbfd25.js"></script>
+  <link rel="stylesheet" href="./assets/index-004fb951.css">
 </head>
+
 <body>
-    <div class="board" id="board">
-        <div class="box" mark-box></div>
-        <div class="box whosturn" mark-box></div>
-        <div class="box" mark-box></div>
-        <div class="box" mark-box></div>
-        <div class="box" mark-box></div>
-        <div class="box" mark-box></div>
-        <div class="box" mark-box></div>
-        <div class="box" mark-box></div>
-        <div class="box" mark-box></div>
+    <div class="main">
+        <div class="whosturn" id="whosturn">x's turn</div>
+        <div class="board" id="board">
+            <div class="box" mark-box></div>
+            <div class="box" id="targetElem" mark-box></div>
+            <div class="box" mark-box></div>
+            <div class="box" mark-box></div>
+            <div class="box" mark-box></div>
+            <div class="box" mark-box></div>
+            <div class="box" mark-box></div>
+            <div class="box" mark-box></div>
+            <div class="box" mark-box></div>
+        </div>
     </div>
     <div class="game-over-popup " id="popup">
         <div class="popup-message">Game over</div>
         <button class="reset-btn" id="resetBtn">Reset Board</button>
     </div>
 </body>
+
 </html>

@@ -13,39 +13,42 @@ let winCombinations = [
     [0, 4, 8],
     [2, 4, 6],
 ];
-let currentTurnX = true; 
+let currentTurnX = true;
 
 startGame();
 
 
 resetBtn.addEventListener("click", handleReset);
 
-function handleClick(e){
+function handleClick(e) {
     let currentElem = e.target;
+
     // mark the box
     markBox(currentElem, currentTurnX);
 
-
-
     // check for win
-    if(checkForWin()){
+    if (checkForWin()) {
         popupMsg.innerHTML = currentTurnX ? "X is winner" : "O is winner"
         popup.classList.add("show")
         return;
     }
+
     // check for draw
-    if(checkForDraw()){
+    if (checkForDraw()) {
         popupMsg.innerHTML = "Draw!"
         popup.classList.add("show")
         return;
     }
     // change turn
     changeTurn();
+
+    // update whosturn
+    whosturn.innerHTML = currentTurnX ? "X's turn" : "O's turn";
 }
 
-function handleReset(e){
+function handleReset(e) {
     popup.classList.remove("show")
-    boxes.forEach(item =>{
+    boxes.forEach(item => {
         item.classList.remove("x");
         item.classList.remove("o");
         item.removeEventListener("click", handleClick)
@@ -53,29 +56,29 @@ function handleReset(e){
     startGame();
 }
 
-function checkForDraw(){
+function checkForDraw() {
     let final = true;
-    boxes.forEach((item)=>{
+    boxes.forEach((item) => {
         final = final * (item.classList.contains("x") || item.classList.contains("o"));
     })
     return final;
 }
 
-function checkForWin(){
-    return  winCombinations.some(arrItem => {
-        return arrItem.every(item =>{
+function checkForWin() {
+    return winCombinations.some(arrItem => {
+        return arrItem.every(item => {
             return boxes[item].classList.contains(currentTurnX ? "x" : "o");
         });
     })
 }
 
 
-function changeTurn(){
+function changeTurn() {
     currentTurnX = !currentTurnX;
     startGame();
 }
 
-function startGame(){
+function startGame() {
     board.classList.remove("x");
     board.classList.remove("o");
     board.classList.add(currentTurnX ? "x" : "o")
@@ -84,7 +87,12 @@ function startGame(){
     })
 }
 
-function markBox(currentElem, currentTurnX){
+function markBox(currentElem, currentTurnX) {
     let classToAdd = currentTurnX ? "x" : "o";
     currentElem.classList.add(classToAdd);
 }
+
+let whosturn = document.getElementById("whosturn");
+let targetElem = document.getElementById("targetElem");
+let divTopPosition = targetElem.getBoundingClientRect().top - whosturn.offsetHeight - 3;
+whosturn.style.top = divTopPosition + "px";

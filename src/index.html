@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +9,26 @@
     <script src="./js/main.js" defer type="module"></script>
     <title>Tic Tac Toe</title>
 </head>
+
 <body>
-    <div class="board" id="board">
-        <div class="box" mark-box></div>
-        <div class="box whosturn" mark-box></div>
-        <div class="box" mark-box></div>
-        <div class="box" mark-box></div>
-        <div class="box" mark-box></div>
-        <div class="box" mark-box></div>
-        <div class="box" mark-box></div>
-        <div class="box" mark-box></div>
-        <div class="box" mark-box></div>
+    <div class="main">
+        <div class="whosturn" id="whosturn">x's turn</div>
+        <div class="board" id="board">
+            <div class="box" mark-box></div>
+            <div class="box" id="targetElem" mark-box></div>
+            <div class="box" mark-box></div>
+            <div class="box" mark-box></div>
+            <div class="box" mark-box></div>
+            <div class="box" mark-box></div>
+            <div class="box" mark-box></div>
+            <div class="box" mark-box></div>
+            <div class="box" mark-box></div>
+        </div>
     </div>
     <div class="game-over-popup " id="popup">
         <div class="popup-message">Game over</div>
         <button class="reset-btn" id="resetBtn">Reset Board</button>
     </div>
 </body>
+
 </html>
