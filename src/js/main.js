@@ -44,6 +44,7 @@ function handleClick(e) {
 
     // update whosturn
     whosturn.innerHTML = currentTurnX ? "X's turn" : "O's turn";
+    e.target.removeEventListener('click', handleClick);
 }
 
 function handleReset(e) {
