@@ -5,6 +5,7 @@ export default {
   build: {
     outDir: '../dist'
   },
+  base: "/tic-tac-toe/",
   server: {
     port: 8080,
     hot: true
